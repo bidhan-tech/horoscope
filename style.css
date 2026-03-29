@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+.first-section {
+    min-height: 100vh;  /* or whatever color your first section is */
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url("horoscope.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: scroll;
+}
+.text1 {
+    position: absolute;
+    top: 30%;
+    left: 28%;
+    color: #fff;
+    text-shadow: 2px 2px 8px #000;
+    font-size: 6rem;
+    font-family: 'Cinzel', serif;
+    animation: fadeUp 2s ease forwards;
+}
+
+/* Second text */
+.text2 {
+    position: absolute;
+    top: 30%;
+    left: 38%;
+     color: #fff;
+    text-shadow: 2px 2px 8px #000;
+    font-size: 1.7rem;
+    font-family: 'Cinzel', serif;
+    animation: fadeDown 1.5s ease forwards;
+}
+.text3 {
+    position: absolute;
+    top: 1%;
+    left: 5%;
+     color: #fff;
+    text-shadow: 2px 2px 8px #000;
+    font-size: 1.7rem;
+    font-family: 'Cinzel', serif;
+}
+.topbar {
+    height:7%;
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.35); /* translucent black */
+    backdrop-filter: blur(4px);
+    position: fixed;
+    top: 0;
+    left: 0;
+     z-index: 1000;
+}
+
+/* Title text */
+.title {
+    position: absolute;
+    top: 20%;    
+    left: 5%;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-size: 2rem;
+    
+    font-family: 'Cinzel', serif;
+    font-weight: 300;
+    animation: fadeDown 2s ease forwards;
+    
+}
+.title1 {
+    position: absolute;
+    top: 20%;    
+    left: 70%;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    
+    font-family: 'Poppins', serif;
+    font-weight: 300;
+    animation: fadeDown 2s ease forwards;
+}
+.title2 {
+    position: absolute;
+    top: 20%;    
+    left: 80%;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    
+    font-family: 'Poppins', serif;
+    font-weight: 300;
+    animation: fadeDown 2s ease forwards;
+}
+
+.zodiac-box {
+    width: 150%;
+    max-width: 350px;
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 60%;        /* move down */
+    left: 35%; 
+    animation: fadeUp 2s ease forwards;  
+}
+
+.zodiac-box h2 {
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.zodiac-box input {
+    width: 50%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.zodiac-box button {
+    width: 100%;
+    padding: 10px;
+    background: #ffffff55;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    color: white;
+}
+input[type="date"] {
+    box-sizing: border-box;     /* prevents icon overflow */
+    padding-right: 35px;        /* space for calendar icon */
+}
+.zodiac-box button:hover {
+    background: #ffffff88;
+}
+
+#result {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+input[type="date"] {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f7d7ff;
+    padding: 12px;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.second-section {
+    width: 100%;
+    height: 100vh;
+   background :#ab3d1a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+}
+.image-box {
+    position: relative;  /* container */
+    width: 100%;
+    height: 100vh;
+    animation: fadeIn 1.5s ease forwards, rotate 4s linear infinite 1.5s;
+}
+
+.rotate-image {
+    width: 400px;
+    animation: fadeRight 1.5s ease forwards, spin 8s linear infinite 1.5s;
+    position: absolute;
+    top: 120%;      /* distance from top */
+    left: 80px;     /* distance from left */
+    transform-origin: center center;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.t1 {
+    position: absolute;
+    top: 110%;
+    left: 45%;
+    color: #fff;
+    text-shadow: 2px 2px 8px #000;
+    font-size: 3rem;
+    font-family: 'Poppins', serif;
+    font-weight : 200;
+     animation: fadeLeft 2s ease forwards;
+}
+
+.t2 {
+    position: absolute;
+    top: 140%;
+    left: 45%;
+    color: #fff;
+    text-shadow: 2px 2px 8px #000;
+    font-size: 2rem;
+    font-family: 'Poppins', serif;
+    font-weight : 200;
+    animation: fadeLeft 2s ease forwards;
+
+}
+
+.t3 {
+    position: absolute;
+    top: 150%;
+    left: 48%;
+    color: #fff;
+    text-shadow: 2px 2px 8px #000;
+    font-size: 1rem;
+    font-family: 'Poppins', serif;
+    font-weight : 200;
+         animation: fadeLeft 2s ease forwards;
+
+}
+
+.t4 {
+    position: absolute;
+    top: 160%;
+    left: 45%;
+    color: #fff;
+    text-shadow: 2px 2px 8px #000;
+    font-size: 2rem;
+    font-family: 'Poppins', serif;
+    font-weight : 200;
+         animation: fadeLeft 2s ease forwards;
+
+}
+
+.t5 {
+    position: absolute;
+    top: 170%;
+    left: 48%;
+    color: #fff;
+    text-shadow: 2px 2px 8px #000;
+    font-size: 1rem;
+    font-family: 'Poppins', serif;
+    font-weight : 200;
+         animation: fadeLeft 2s ease forwards;
+
+}
+
+
+.third-section {
+    width: 100%;
+    height: 150vh;
+   background :#ab3d1a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+/* New Contact Section */
+.pdf-form {
+    width: 100%;
+    max-width: 700px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    animation: fadeUp 2s ease forwards;  
+}
+
+.pdf-form h2 {
+    text-align: center;
+    color: white;
+}
+
+.pdf-form input,
+.pdf-form select,
+.pdf-form textarea {
+       width: 90%;   /* or any size you want */
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: 1.4rem;
+
+    border: none;
+    border-radius: 0.8rem;
+
+    background: rgba(255,255,255,0.25);
+    color: white;
+}
+
+.pdf-form textarea {
+    height: 110px;
+    resize: none;
+}
+
+.pdf-form button {
+    padding: 1.1rem;
+    background: #ff7b00;
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.pdf-form button:hover {
+    background: #ff9e3d;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .pdf-form {
+        margin-top: 2rem;
+    }
+}
+
+#gender {
+      /* change background */
+    color: whitesmoke;                     /* change text color */
+    border: none;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    font-size: 1.4rem;
+}
+
+/* Dropdown list text color */
+#gender option {
+    background: white;   /* dropdown bg */
+    color: black;        /* dropdown text */
+}
+
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: #ab3d1a !important;   /* FORCE APPLY */
+    animation: fadeUp 2s ease forwards;
+}
+
+.footer .copyright{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 10px;
+    color: white !important;
+}
+
+.title1, .title2 {
+    cursor: pointer;
+     color: white;           /* default color */
+    transition: 0.3s ease;
+}
+.title1:hover,
+.title2:hover {
+    color: #ffae42;  /* golden orange glow */
+}
+
+
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade Right */
+
+@keyframes fadeRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+
+
+.second-section .t1{
+    animation: fadeLeft 2s ease;
+}
+.first-section.active .text2,
+.first-section.active .text3 {
+    animation: fadeDown 2s ease;
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <section class="first-section">
+ <div class="topbar">
+        <h1 class="title">Horoscope</h1>
+         <h1 class="title1" onclick="goHome()">Home</h1>
+<h1 class="title2" onclick="goPrediction()">Predictions</h1>
+    </div>
+<h2 class="text2">Unlock the stars within</h2>
+<h1 class="text1">Cosmic Path</h1>
+
+<script>
+function goHome() {
+    document.querySelector(".first-section").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function goPrediction() {
+    document.querySelector(".third-section").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+</script>
+
+
+ <div class="zodiac-box">
+        
+
+       <input type="date" id="customDate">
+        <button onclick="calculateZodiac()">Check</button>
+
+        <p id="result"></p>
+    </div>
+
+<script>
+function calculateZodiac() {
+    const dateInput = document.getElementById("customDate").value;
+    const resultBox = document.getElementById("result");
+
+    if (!dateInput) {
+        resultBox.textContent = "Please select a date!";
+        return;
+    }
+
+    const d = new Date(dateInput);
+    const day = d.getDate();
+    const month = d.getMonth() + 1;
+
+    let zodiac = "";
+
+    if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) zodiac = "Aries";
+    else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) zodiac = "Taurus";
+    else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) zodiac = "Gemini";
+    else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) zodiac = "Cancer";
+    else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) zodiac = "Leo";
+    else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) zodiac = "Virgo";
+    else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) zodiac = "Libra";
+    else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) zodiac = "Scorpio";
+    else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) zodiac = "Sagittarius";
+    else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) zodiac = "Capricorn";
+    else if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) zodiac = "Aquarius";
+    else zodiac = "Pisces";
+
+    resultBox.textContent = zodiac;
+}
+</script>
+</body>
+<body>
+
+
+</section>
+<section class="second-section">
+    <img src="signsr.png" class="rotate-image">
+    <h1 class="t1">Unlock The Stars Of Our<br> Cosmic Path</h1>
+    <h1 class="t2">→When</h1>
+    <h1 class="t3">Your moment arrives soon.<br>Expect things to unfold at the perfect time.</h1>
+    <h1 class="t4">→Where</h1>
+    <h1 class="t5">Opportunities appear where you least expect.<br>Stay open — the right place will reveal itself. </h1>
+</section>
+<section class="third-section">
+   <div class="pdf-form">
+    <h2>Enter Your Details</h2>
+
+    <input type="text" id="name" placeholder="Your Name">
+
+    <input type="date" id="birthdate">
+
+    <input type="text" id="birthplace" placeholder="Birth Place">
+
+    <select id="gender">
+        <option value="" disabled selected>Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+    </select>
+
+   
+
+    <button onclick="generatePDF()">Generate PDF</button>
+</div>
+<p class="copyright">
+            © Bidhan Chandra Samanta - All Rights Reserved
+        </p>
+
+<script>
+function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF("p", "mm", "a4");
+
+    // Collect Input Values
+    let name = document.getElementById("name").value;
+  let dob = document.getElementById("birthdate").value;
+    let birthplace = document.getElementById("birthplace").value;
+    let gender = document.getElementById("gender").value;
+     // Auto-calc zodiac from birthdate
+function getZodiacFromDate(dateString) {
+    let d = new Date(dateString);
+    let day = d.getDate();
+    let month = d.getMonth() + 1;
+
+    if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) return "Aries";
+    if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) return "Taurus";
+    if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return "Gemini";
+    if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return "Cancer";
+    if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) return "Leo";
+    if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) return "Virgo";
+    if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) return "Libra";
+    if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) return "Scorpio";
+    if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) return "Sagittarius";
+    if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) return "Capricorn";
+    if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "Aquarius";
+    return "Pisces";
+}
+
+// Use the function
+let zodiac = getZodiacFromDate(dob);
+    let bg = new Image();
+    bg.src = "zodiacTemplate.jpg";
+
+    bg.onload = function () {
+        pdf.addImage(bg, "PNG", 0, 0, 210, 297);
+
+        pdf.setFont("Helvetica", "bold");
+        pdf.setFontSize(14);
+        pdf.setTextColor(0, 0, 50);
+
+        pdf.text(name,        42, 151.5);
+        pdf.text(dob,         60, 158.5);
+        pdf.text(birthplace,  50, 166);
+        pdf.text(gender,      42, 172.5);
+        pdf.text(zodiac,      55, 179.5);
+console.log("Zodiac is:", zodiac);
+        pdf.save(name + "_horoscope.pdf");
+    };
+}
+</script>
+
+
+
+
+
+
+
+
+</section>
+
+</section>
+<script>
+const homeNav = document.querySelector(".home");
+const predictionNav = document.querySelector(".prediction");
+
+const sections = document.querySelectorAll(".first-section, .second-section, .third-section");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+            entry.target.classList.add("active");
+
+            /* NAV COLOR CHANGE */
+            if(entry.target.classList.contains("first-section")){
+                homeNav.classList.add("activeNav");
+                predictionNav.classList.remove("activeNav");
+            }
+
+            if(entry.target.classList.contains("third-section")){
+                predictionNav.classList.add("activeNav");
+                homeNav.classList.remove("activeNav");
+            }
+
+        } else {
+            entry.target.classList.remove("active");
+        }
+
+    });
+},{ threshold:0.4 });
+
+sections.forEach(section => {
+    observer.observe(section);
+
+}); </script>
+</body>
+</html>
